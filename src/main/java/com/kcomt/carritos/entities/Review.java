@@ -10,8 +10,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
-import com.FAS.entities.Consumer;
-import com.FAS.entities.FoodTruck;
+import com.kcomt.carritos.entities.Consumer;
+import com.kcomt.carritos.entities.FoodTruck;
 
 @Entity
 @Table(name="review")
