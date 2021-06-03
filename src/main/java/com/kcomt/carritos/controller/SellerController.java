@@ -57,7 +57,7 @@ public class SellerController {
 	}
 	
 	@ApiOperation("Listado de Sellers")
-	@GetMapping(value = "/safe", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Seller>> fetchSellers(){
 		try {
 			List<Seller> Sellers = new ArrayList<>();
@@ -82,7 +82,7 @@ public class SellerController {
 	}
 	
 	@ApiOperation("Obtener Seller por id")
-	@GetMapping(value = "/safe/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Seller> fetchSeller(@PathVariable("id") Integer id) {
 
 		try {
@@ -98,7 +98,7 @@ public class SellerController {
 	}
 
 	@ApiOperation("Obtener seller por username")
-	@GetMapping(value = "/safe/username/{username}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/username/{username}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Seller> fetchbuisnessSellerByUsername(@PathVariable("username") String username) {
 
 		try {

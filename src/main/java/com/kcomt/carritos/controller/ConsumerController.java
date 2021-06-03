@@ -37,7 +37,7 @@ public class ConsumerController {
 	private IConsumerService consumerService;
 	
 	@ApiOperation("Registro de consumers")
-	@PostMapping(value = "/safe", consumes= MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(consumes= MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> saveconsumer(@Valid @RequestBody Consumer consumer)
 	{
 		try {
@@ -55,7 +55,7 @@ public class ConsumerController {
 	}
 	
 	@ApiOperation("Listado de consumers")
-	@GetMapping(value = "/safe", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Consumer>> fetchconsumers(){
 		try {
 			List<Consumer> consumers = new ArrayList<>();
@@ -67,7 +67,7 @@ public class ConsumerController {
 	}
 	
 	@ApiOperation("Obtener consumer por id")
-	@GetMapping(value = "/safe/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Consumer> fetchconsumer(@PathVariable("id") Integer id) {
 
 		try {
@@ -83,7 +83,7 @@ public class ConsumerController {
 	}
 	
 	@ApiOperation("Obtener consumer por username")
-	@GetMapping(value = "/safe/username/{username}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/username/{username}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Consumer> fetchconsumerByUsername(@PathVariable("username") String username) {
 		try {
 			Consumer bO = new Consumer();

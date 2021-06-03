@@ -36,8 +36,8 @@ public class BuisnessOwnerController {
 	@Autowired
 	private IBuisnessOwnerService buisnessOwnerService;
 	
-	@ApiOperation("Registro de buisnessOwners")
-	@PostMapping(value = "/safe", consumes= MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
+	@ApiOperation("Registro de buisnessOwners kk")
+	@PostMapping(consumes= MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> savebuisnessOwner(@Valid @RequestBody BuisnessOwner buisnessOwner)
 	{
 		try {
@@ -56,7 +56,7 @@ public class BuisnessOwnerController {
 	}
 	
 	@ApiOperation("Listado de buisnessOwners")
-	@GetMapping(value = "/safe", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<BuisnessOwner>> fetchbuisnessOwners(){
 		try {
 			List<BuisnessOwner> buisnessOwners = new ArrayList<>();
@@ -68,7 +68,7 @@ public class BuisnessOwnerController {
 	}
 	
 	@ApiOperation("Obtener buisnessOwner por id")
-	@GetMapping(value = "/safe/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<BuisnessOwner> fetchbuisnessOwner(@PathVariable("id") Integer id) {
 
 		try {
@@ -84,7 +84,7 @@ public class BuisnessOwnerController {
 	}
 	
 	@ApiOperation("Obtener buisnessOwner por username")
-	@GetMapping(value = "/safe/username/{username}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/username/{username}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<BuisnessOwner> fetchbuisnessOwnerByUsername(@PathVariable("username") String username) {
 
 		try {
